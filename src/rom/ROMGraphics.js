@@ -80,14 +80,16 @@ export default class ROMGraphics {
     for (i = 0; i < 8; ++i) {
       if (horizontalFlip) {
         px = x + 7 - i;
-      } else {
+      }
+      else {
         px = x + i;
       }
       for (j = 0; j < 8; ++j) {
         rgbArray = subPaletteArray[this.tiles[tile][i][j]];
         if (verticalFlip) {
           py = y + 7 - j;
-        } else {
+        }
+        else {
           py = y + j;
         }
         pos = 4 * px + stride * py;
@@ -101,7 +103,6 @@ export default class ROMGraphics {
   /**
    * Internal function - reads graphics from the specified block and builds
    * tileset.
-   *
    * @param block
    * The block to read graphics data from
    */

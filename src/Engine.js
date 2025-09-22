@@ -16,7 +16,7 @@ export default class Engine {
       alphas = this.constructor.computeAlphas(
         layers.map((layer) => layer.entry)
       ),
-      canvas = document.querySelector("canvas"),
+      canvas = document.querySelector("canvas")
     } = {}
   ) {
     this.layers = layers;
