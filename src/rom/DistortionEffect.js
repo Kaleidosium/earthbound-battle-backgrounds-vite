@@ -4,6 +4,10 @@ export const HORIZONTAL = 1;
 export const HORIZONTAL_INTERLACED = 2;
 export const VERTICAL = 3;
 /* The data in effects is stored as uint8, but when we compute with them, we need to cast the results to int16. */
+/**
+ *
+ * @param value
+ */
 function asInt16(value) {
   return new Int16Array([value])[0];
 }
@@ -21,7 +25,8 @@ export default class DistortionEffect {
   static sanitize(type) {
     if (type !== HORIZONTAL && type !== VERTICAL) {
       return HORIZONTAL_INTERLACED;
-    } else {
+    }
+    else {
       return type;
     }
   }

@@ -9,6 +9,9 @@ const REPEAT_PREVIOUS_DATA = 4;
 const REVERSE_BITS = 5;
 const UNKNOWN_1 = 6;
 const UNKNOWN_2 = 7;
+/**
+ *
+ */
 function generateReversedBytes() {
   const reversedBytes = new Int16Array(256);
   for (let i = 0; i < reversedBytes.length; ++i) {
@@ -19,13 +22,20 @@ function generateReversedBytes() {
   }
   return reversedBytes;
 }
+/**
+ *
+ * @param address
+ * @param header
+ */
 export function snesToHex(address, header = true) {
   let newAddress = address;
   if (newAddress >= 0x400000 && newAddress < 0x600000) {
     newAddress -= 0x0;
-  } else if (newAddress >= 0xc00000 && newAddress < 0x1000000) {
+  }
+  else if (newAddress >= 0xc00000 && newAddress < 0x1000000) {
     newAddress -= 0xc00000;
-  } else {
+  }
+  else {
     throw new Error(`SNES address out of range: ${newAddress}`);
   }
   if (header) {
@@ -33,6 +43,11 @@ export function snesToHex(address, header = true) {
   }
   return newAddress - 0xa0200;
 }
+/**
+ *
+ * @param address
+ * @param header
+ */
 export function hexToSnes(address, header = true) {
   let newAddress = address;
   if (header) {
@@ -40,9 +55,11 @@ export function hexToSnes(address, header = true) {
   }
   if (newAddress >= 0 && newAddress < 0x400000) {
     return newAddress + 0xc00000;
-  } else if (newAddress >= 0x400000 && newAddress < 0x600000) {
+  }
+  else if (newAddress >= 0x400000 && newAddress < 0x600000) {
     return newAddress;
-  } else {
+  }
+  else {
     throw new Error(`File offset out of range: ${newAddress}`);
   }
 }
@@ -59,6 +76,11 @@ export function add(o) {
   }
   ROM.objects.get(constructor).push(o);
 }
+/**
+ *
+ * @param constructor
+ * @param i
+ */
 export function getObject(constructor, i) {
   return ROM.objects.get(constructor)[i];
 }
@@ -66,10 +88,9 @@ export function getObject(constructor, i) {
  * Allocates a writeable block using the Unrestricted storage model. The
  * resulting block may be located anywhere in the ROM.
  *
- *
  * @param size
  * The size, in bytes, required for this block
- * @return A writeable block, or null if allocation failed
+ * @returns A writeable block, or null if allocation failed
  */
 /**
  * Returns a readable block at the given location. Nominally, should also
@@ -81,7 +102,7 @@ export function getObject(constructor, i) {
  * @param location
  * The address from which to read
  *
- * @return A readable block
+ * @returns A readable block
  */
 export function readBlock(location) {
   // NOTE: there's no address conversion implemented yet;
@@ -112,7 +133,7 @@ export function readBlock(location) {
  * @param read
  * "Out" parameter which receives the number of bytes of
  * compressed data read
- * @return The size of the decompressed data if successful, null otherwise
+ * @returns The size of the decompressed data if successful, null otherwise
  */
 export function decompress(start, data, output, read) {
   const maxLength = output.length;
@@ -214,9 +235,14 @@ export function decompress(start, data, output, read) {
   newRead = pos - start + 1;
   return output;
 }
+/**
+ *
+ * @param start
+ * @param data
+ */
 export function getCompressedSize(start, data) {
   /* I use `var` as a workaround, because babili's transform currently binds it to the wrong scope! */
-  var bpos = 0;
+  let bpos = 0;
   let pos = start;
   let bpos2 = 0;
   while (data[pos] !== 0xff) {

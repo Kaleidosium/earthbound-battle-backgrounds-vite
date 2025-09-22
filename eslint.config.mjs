@@ -26,7 +26,7 @@ export default defineConfig([jsdoc({ config: "flat/recommended" }),{
         },
 
         parser: babelParser,
-        ecmaVersion: 5,
+        ecmaVersion: 2020,
         sourceType: "module",
 
         parserOptions: {
@@ -63,7 +63,7 @@ export default defineConfig([jsdoc({ config: "flat/recommended" }),{
         "default-case": ["error"],
         "dot-notation": ["error"],
         "dot-location": ["error", "property"],
-        "eol-last": ["warn", "never"],
+        "eol-last": "off",
         eqeqeq: ["error"],
         "guard-for-in": ["error"],
 
@@ -121,7 +121,7 @@ export default defineConfig([jsdoc({ config: "flat/recommended" }),{
         "no-lone-blocks": ["warn"],
 
         "no-multiple-empty-lines": ["error", {
-            max: 0,
+            max: 2,
             maxEOF: 0,
         }],
 
@@ -183,6 +183,8 @@ export default defineConfig([jsdoc({ config: "flat/recommended" }),{
         "prefer-rest-params": ["warn"],
         "prefer-spread": ["warn"],
         "prefer-template": ["warn"],
+
+        "jsdoc/tag-lines": ["warn", "any", { startLines: 1 }],
 
         quotes: ["warn", "double", {
             allowTemplateLiterals: true,

@@ -11,7 +11,7 @@ export default class Block {
    * method first measures the compressed data's size before allocating the
    * destination array, which incurs a slight additional overhead.
    *
-   * @return An array containing the decompressed data.
+   * @returns An array containing the decompressed data.
    */
   decompress() {
     const size = getCompressedSize(this.pointer, data);
@@ -30,7 +30,7 @@ export default class Block {
    * Reads a 16-bit integer from the block's current position and advances the
    * current position by 2 bytes.
    *
-   * @return The 16-bit value at the current position.
+   * @returns The 16-bit value at the current position.
    */
   readInt16() {
     return data[this.pointer++];
@@ -46,7 +46,7 @@ export default class Block {
   }
   readDoubleShort() {
     const fakeShort = new Int16Array([
-      this.readInt16() + (this.readInt16() << 8),
+      this.readInt16() + (this.readInt16() << 8)
     ]);
     return fakeShort[0];
   }

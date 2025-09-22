@@ -19,7 +19,7 @@ export default class BackgroundPalette {
    * @param palette
    * The index of the subpalette to retrieve.
    *
-   * @return An array containing the colors of the specified subpalette.
+   * @returns An array containing the colors of the specified subpalette.
    */
   getColors(palette) {
     return this.colors[palette];

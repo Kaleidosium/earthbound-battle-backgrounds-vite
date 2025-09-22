@@ -1,7 +1,7 @@
 import {
   HORIZONTAL,
   HORIZONTAL_INTERLACED,
-  VERTICAL,
+  VERTICAL
 } from "./DistortionEffect";
 import { SNES_HEIGHT, SNES_WIDTH } from "../Engine";
 
@@ -10,6 +10,11 @@ const R = 0;
 const G = 1;
 const B = 2;
 const A = 3;
+/**
+ *
+ * @param n
+ * @param m
+ */
 function mod(n, m) {
   return ((n % m) + m) % m;
 }
@@ -42,7 +47,7 @@ export default class Distorter {
       compressionAcceleration,
       frequency,
       frequencyAcceleration,
-      speed,
+      speed
     } = effect;
     /* Compute "current" values of amplitude, frequency and compression */
     const t2 = ticks * 2;
@@ -72,11 +77,13 @@ export default class Distorter {
    * If the distortion mode is vertical, this offset should be interpreted as
    * the y-coordinate of the line from the source bitmap to draw at the given
    * y-coordinate in the destination bitmap.
+   *
    * @param y
    * 	The y-coordinate of the destination line to evaluate for
    * @param t
    * 	The number of ticks since beginning animation
-   * @return
+   * @param distortionEffect
+   * @returns
    * 	The distortion offset for the given (y, t) coordinates
    */
   getAppliedOffset(y, distortionEffect) {
@@ -154,7 +161,8 @@ export default class Distorter {
           newBitmap[bPos + G] = alpha * oldBitmap[sPos + G];
           newBitmap[bPos + B] = alpha * oldBitmap[sPos + B];
           newBitmap[bPos + A] = 255;
-        } else {
+        }
+        else {
           newBitmap[bPos + R] += alpha * oldBitmap[sPos + R];
           newBitmap[bPos + G] += alpha * oldBitmap[sPos + G];
           newBitmap[bPos + B] += alpha * oldBitmap[sPos + B];

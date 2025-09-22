@@ -103,6 +103,7 @@ export default class ROMGraphics {
   /**
    * Internal function - reads graphics from the specified block and builds
    * tileset.
+   *
    * @param block
    * The block to read graphics data from
    */

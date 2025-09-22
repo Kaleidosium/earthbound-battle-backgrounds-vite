@@ -23,6 +23,7 @@ export default class BackgroundLayer {
    *
    * @param dst
    *            Bitmap object into which to render
+   * @param bitmap
    * @param letterbox
    *            Size in pixels of black borders at top and bottom of image
    * @param ticks
@@ -46,7 +47,7 @@ export default class BackgroundLayer {
   loadPalette(background) {
     this.paletteCycle = new PaletteCycle({
       background,
-      palette: getObject(BackgroundPalette, background.paletteIndex),
+      palette: getObject(BackgroundPalette, background.paletteIndex)
     });
   }
   loadEffect(index) {
