@@ -1,7 +1,7 @@
 import BackgroundLayer from "./rom/BackgroundLayer";
 import Engine from "./Engine";
 import ROM from "./rom/ROM";
-import data from "../data/backgrounds-truncated.dat";
+import data from "../data/backgrounds-truncated.dat?uint8array";
 
 const backgroundData = new Uint8Array(data);
 new ROM(backgroundData);
