@@ -1,13 +1,13 @@
 {
-  "name": "earthbound-battle-backgrounds-rollup",
-  "version": "3.2.0",
+  "name": "earthbound-battle-backgrounds-vite",
+  "version": "4.0.0",
   "description": "An API to render Earthbound's battle backgrounds in your browser",
   "files": [
     "dist/"
   ],
-  "main": "dist/earthbound-battle-backgrounds-rollup.cjs.js",
-  "module": "dist/earthbound-battle-backgrounds-rollup.esm.js",
-  "browser": "dist/earthbound-battle-backgrounds-rollup.umd.js",
+  "main": "dist/earthbound-battle-backgrounds-vite.cjs.js",
+  "module": "dist/earthbound-battle-backgrounds-vite.esm.js",
+  "browser": "dist/earthbound-battle-backgrounds-vite.umd.js",
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -24,7 +24,6 @@
     "@babel/preset-env": "^7.28.3",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.36.0",
-    "@wemap/rollup-plugin-arraybuffer": "^0.1.2",
     "eslint": "9.36.0",
     "eslint-plugin-jsdoc": "^60.1.1",
     "globals": "^16.4.0",
@@ -34,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kaleidosium/earthbound-battle-backgrounds-rollup.git"
+    "url": "git+https://github.com/Kaleidosium/earthbound-battle-backgrounds-vite.git"
   },
   "keywords": [
     "earthbound",
@@ -46,7 +45,7 @@
     "javascript"
   ],
   "bugs": {
-    "url": "https://github.com/Kaleidosium/earthbound-battle-backgrounds-rollup/issues"
+    "url": "https://github.com/Kaleidosium/earthbound-battle-backgrounds-vite/issues"
   },
-  "homepage": "https://github.com/Kaleidosium/earthbound-battle-backgrounds-rollup#readme"
+  "homepage": "https://github.com/Kaleidosium/earthbound-battle-backgrounds-vite#readme"
 }

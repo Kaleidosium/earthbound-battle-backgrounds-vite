@@ -1,13 +1,15 @@
-# earthbound-battle-backgrounds-rollup
+# earthbound-battle-backgrounds-vite
 
 This project acts as a library to render Earthbound's battle backgrounds. You can render the results in a browser or even on the server.
 
-> This fork is an updated version of the original library by kdex, I've also migrated the codebase away from webpack to rollup for performance and code size reasons.
+> This fork is an updated version of kdex's original library. I first migrated the codebase from Webpack to Rollup for performance and smaller bundle sizes, and later to Vite for future-proofing.
 
-<!---
 ## What is this?
 
-Earthbound, also known as *Mother 2* in Japan, is a SNES game released in 1994. This project displays Earthbound's battle backgrounds. In order to render the frames, currently a [Canvas 2D context](https://www.w3.org/TR/2dcontext/) is used. I'd be happy to use a [WebGL 2 context](https://www.khronos.org/registry/webgl/specs/latest/2.0/) once support is more wide-spread.
+Earthbound, also known as *Mother 2* in Japan, is a SNES game released in 1994. This project displays Earthbound's battle backgrounds. In order to render the frames, currently a [Canvas 2D context](https://www.w3.org/TR/2dcontext/) is used.
+
+<!---
+I'd be happy to use a [WebGL 2 context](https://www.khronos.org/registry/webgl/specs/latest/2.0/) once support is more wide-spread.
 
 ## Is there a demo?
 
@@ -24,19 +26,19 @@ The source code for the demo can be found [here](https://github.com/kdex/kdex.gi
 ## Installation
 
 ```bash
-npm i -S earthbound-battle-backgrounds-rollup
+npm i -S earthbound-battle-backgrounds-vite
 ```
 
 ## Example
 
-This code is more or less equivalent to the demo from above, minus the key events.
+<!-- This code is more or less equivalent to the demo from above, minus the key events. -->
 
 ```js
-import { BackgroundLayer, Engine } from "earthbound-battle-backgrounds-rollup";
+import { BackgroundLayer, Engine } from "earthbound-battle-backgrounds-vite";
 
 /* Create animation engine  */
 const engine = new Engine([new BackgroundLayer(153), new BackgroundLayer(298)], {
- canvas: document.querySelector("#target-canvas");
+    canvas: document.querySelector("#target-canvas")
 });
 engine.animate();
 ```
@@ -137,3 +139,4 @@ Runs the engine. This will cause frames to be drawn on the instance's `canvas`.
 - In 2016, [kdex](https://github.com/kdex) rewrote the latter in [ES2015+](https://github.com/kdex/earthbound-battle-backgrounds) for it to stay maintainable.
 - In 2017, gjtorikian [copy-and-pasted kdex's source code into his repository](https://github.com/gjtorikian/Earthbound-Battle-Backgrounds-JS/issues/7).
 - In 2021, [I](https://github.com/Kaleidosium) updated the codebase to use Rollup and removed/replaced some old dependencies to keep the project maintainable as was kdex's vision.
+- In 2025, [I](https://github.com/Kaleidosium) migrated the codebase to Vite, continuing kdex's original vision for a maintainable project (kdex has since left GitHub).

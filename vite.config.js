@@ -11,7 +11,7 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'src/index.js'),
       name: 'EBB',
       formats: ['es', 'cjs', 'umd'],
-      fileName: (format) => `earthbound-battle-backgrounds-rollup.${format}.js`,
+      fileName: (format) => `earthbound-battle-backgrounds-vite.${format}.js`,
     },
   },
 });
