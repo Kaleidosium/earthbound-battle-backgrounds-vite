@@ -6,7 +6,7 @@
     "dist/"
   ],
   "main": "dist/earthbound-battle-backgrounds-vite.cjs.js",
-  "module": "dist/earthbound-battle-backgrounds-vite.esm.js",
+  "module": "dist/earthbound-battle-backgrounds-vite.es.js",
   "browser": "dist/earthbound-battle-backgrounds-vite.umd.js",
   "scripts": {
     "prepare": "vite build",
