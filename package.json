@@ -9,14 +9,14 @@
   "module": "dist/earthbound-battle-backgrounds-vite.es.js",
   "browser": "dist/earthbound-battle-backgrounds-vite.umd.js",
   "scripts": {
-    "prepare": "vite build",
-    "build": "vite build",
+    "prepare": "vite build && tsc",
+    "build": "vite build && tsc",
     "dev": "vite build --watch",
     "lint": "eslint src"
   },
   "author": "kdex, Kaleidosium",
   "license": "MIT",
-  "types": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/eslint-parser": "^7.28.4",

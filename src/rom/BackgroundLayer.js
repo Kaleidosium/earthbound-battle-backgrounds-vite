@@ -11,6 +11,12 @@ export default class BackgroundLayer {
   /* TODO: Remove this; information moved to class BattleBackground */
   static MINIMUM_LAYER = 0;
   static MAXIMUM_LAYER = 326;
+  /** @type {number} */
+  entry;
+  /**
+   * @param {number} entry Index of the battle background to load (see
+   *            MINIMUM_LAYER/MAXIMUM_LAYER for the valid range)
+   */
   constructor(entry) {
     this.graphics = null;
     this.paletteCycle = null;
@@ -21,16 +27,15 @@ export default class BackgroundLayer {
   /**
    * Renders a frame of the background animation into the specified Bitmap
    *
-   * @param dst
+   * @param {Uint8ClampedArray} bitmap
    *            Bitmap object into which to render
-   * @param bitmap
-   * @param letterbox
-   *            Size in pixels of black borders at top and bottom of image
-   * @param ticks
+   * @param {number} letterbox
+   *            Pixel size
+   * @param {number} ticks
    *            Time value of the frame to compute
-   * @param alpha
+   * @param {number} alpha
    *            Blending opacity
-   * @param erase
+   * @param {boolean} erase
    *            Whether or not to clear the destination bitmap before
    *            rendering
    */
