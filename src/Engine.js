@@ -1,12 +1,30 @@
 let frameID = -1;
 export const SNES_WIDTH = 256;
 export const SNES_HEIGHT = 224;
+
+/**
+ * @typedef {Object} EngineOptions
+ * @property {number} [fps]
+ * @property {number} [aspectRatio]
+ * @property {number} [frameSkip]
+ * @property {number[]} [alphas]
+ * @property {HTMLCanvasElement | null} [canvas]
+ */
+
 export default class Engine {
+  /**
+   * @param {number[]} entries
+   * @returns {number[]}
+   */
   static computeAlphas(entries) {
     return entries.map((entry) =>
       entry ? 1 / entries.filter((x) => x).length : 0
     );
   }
+  /**
+   * @param {import("./rom/BackgroundLayer").default[]} [layers]
+   * @param {EngineOptions} [options]
+   */
   constructor(
     layers = [],
     {
